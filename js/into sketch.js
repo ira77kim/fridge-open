@@ -42,7 +42,7 @@ let frequency ={};
 for(i=0;i<13;i++){
     frequency[i]= new THREE.MeshPhongMaterial({
         color: boxcolor[12-i],
-        opacity: 0.7,
+        opacity: 0.9,
         transparent: true,
         side: THREE.DoubleSide,
     });
@@ -424,12 +424,12 @@ function check(){
         if(camera.position.z>=51&&camera.position.z<=69){
             if(camera.position.x>=-49&&camera.position.x<=-31){
                 day="day 1";
-                itemCount="0 items";
+                itemCount="0 item";
                 openCount=4;
             }
             else if(camera.position.x>=-29&&camera.position.x<=-11){
                 day="day 1";
-                itemCount="1 items";
+                itemCount="1 item";
                 openCount=6;
             }
             else if(camera.position.x>=-9&&camera.position.x<=9){
@@ -451,12 +451,12 @@ function check(){
         else if(camera.position.z>=31&&camera.position.z<=49){
             if(camera.position.x>=-49&&camera.position.x<=-31){
                 day="day 2";
-                itemCount="0 items";
+                itemCount="0 item";
                 openCount=1;
             }
             else if(camera.position.x>=-29&&camera.position.x<=-11){
                 day="day 2";
-                itemCount="1 items";
+                itemCount="1 item";
                 openCount=10;
             }
             else if(camera.position.x>=-9&&camera.position.x<=9){
@@ -478,12 +478,12 @@ function check(){
         else if(camera.position.z>=11&&camera.position.z<=29){
             if(camera.position.x>=-49&&camera.position.x<=-31){
                 day="day 3";
-                itemCount="0 items";
+                itemCount="0 item";
                 openCount=2;
             }
             else if(camera.position.x>=-29&&camera.position.x<=-11){
                 day="day 3";
-                itemCount="1 items";
+                itemCount="1 item";
                 openCount=11;
             }
             else if(camera.position.x>=-9&&camera.position.x<=9){
@@ -505,12 +505,12 @@ function check(){
         else if(camera.position.z>=-9&&camera.position.z<=9){
             if(camera.position.x>=-49&&camera.position.x<=-31){
                 day="day 4";
-                itemCount="0 items";
+                itemCount="0 item";
                 openCount=1;
             }
             else if(camera.position.x>=-29&&camera.position.x<=-11){
                 day="day 4";
-                itemCount="1 items";
+                itemCount="1 item";
                 openCount=12;
             }
             else if(camera.position.x>=-9&&camera.position.x<=9){
@@ -532,12 +532,12 @@ function check(){
         else if(camera.position.z>=-29&&camera.position.z<=-11){
             if(camera.position.x>=-49&&camera.position.x<=-31){
                 day="day 5";
-                itemCount="0 items";
+                itemCount="0 item";
                 openCount=3;
             }
             else if(camera.position.x>=-29&&camera.position.x<=-11){
                 day="day 5";
-                itemCount="1 items";
+                itemCount="1 item";
                 openCount=5;
             }
             else if(camera.position.x>=-9&&camera.position.x<=9){
@@ -559,12 +559,12 @@ function check(){
         else if(camera.position.z>=-49&&camera.position.z<=-31){
             if(camera.position.x>=-49&&camera.position.x<=-31){
                 day="day 6";
-                itemCount="0 items";
+                itemCount="0 item";
                 openCount=4;
             }
             else if(camera.position.x>=-29&&camera.position.x<=-11){
                 day="day 6";
-                itemCount="1 items";
+                itemCount="1 item";
                 openCount=3;
             }
             else if(camera.position.x>=-9&&camera.position.x<=9){
@@ -586,12 +586,12 @@ function check(){
         else if(camera.position.z>=-69&&camera.position.z<=-51){
             if(camera.position.x>=-49&&camera.position.x<=-31){
                 day="day 7";
-                itemCount="0 items";
+                itemCount="0 item";
                 openCount=4;
             }
             else if(camera.position.x>=-29&&camera.position.x<=-11){
                 day="day 7";
-                itemCount="1 items";
+                itemCount="1 item";
                 openCount=4;
             }
             else if(camera.position.x>=-9&&camera.position.x<=9){
@@ -611,7 +611,7 @@ function check(){
             }
         }
         console.log(day,itemCount,openCount);
-        value.innerHTML= "On "+ day +", <br>there were(was) " +openCount+" times the refrigerator was open.<br>Each time, "+itemCount+" entered or exited the refrigerator.";
+        value.innerHTML= "On "+ day +", <br>there were(was) " +openCount+" times the refrigerator was open<br>in which "+itemCount+" entered or exited the refrigerator each time.";
     }
     else{
         console.log("not in zone");
