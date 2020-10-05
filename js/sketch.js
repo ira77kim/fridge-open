@@ -6,7 +6,7 @@ let light1,light2;
 //material related
 // let boxcolor=[0xF9643B, 0xFC7847, 0xFE8B53, 0xFEAB6D, 0xFECA87, 0xFFE4C3, 0xFFFFFF, 0xBED1FD, 0x7DA2FA, 0x5D77DF, 0x3C4CC4, 0x2A359F];
 // let boxcolor=[0xF9643B, 0xE76D4C, 0xD4765E, 0xC27F6F, 0xB0BBB0, 0x9D9192, 0x8B9AA3, 0x78A3B5, 0x66ACC6 ,0x54B5D7, 0x41BEE9, 0x2FC7FA];
-let boxcolor=[0xEA5400, 0xDA5615, 0xC9582B, 0xB95A40, 0xA95B55, 0x995D6A, 0x895F7F, 0x786195, 0x6863AA, 0x5864BF,0x4866D4, 0x3768EA, 0x276AEFF];
+let boxcolor=[0xEA5400, 0xDA5615, 0xC9582B, 0xB95A40, 0xA95B55, 0x995D6A, 0x895F7F, 0x786195, 0x6863AA, 0x5864BF,0x4866D4, 0x3768EA, 0x276AFF];
 
 let axiscolor=0xFFFFFF;
 let bg=0xCECECE;
@@ -63,7 +63,7 @@ let tue2 = new THREE.Mesh(outerBoxGeo,frequency[8]);
 tue2.position.set(0,0,40);
 let tue3 = new THREE.Mesh(outerBoxGeo,frequency[3]);
 tue3.position.set(20,0,40);
-let tue4 = new THREE.Mesh(outerBoxGeo,frequency[0]);
+let tue4 = new THREE.Mesh(outerBoxGeo,frequency[0]);//
 tue4.position.set(40,0,40);
 let wed0 = new THREE.Mesh(outerBoxGeo,frequency[2]);
 wed0.position.set(-40,0,20);
@@ -73,7 +73,7 @@ let wed2 = new THREE.Mesh(outerBoxGeo,frequency[4]);
 wed2.position.set(0,0,20);
 let wed3 = new THREE.Mesh(outerBoxGeo,frequency[3]);
 wed3.position.set(20,0,20);
-let wed4 = new THREE.Mesh(outerBoxGeo,frequency[0]);
+let wed4 = new THREE.Mesh(outerBoxGeo,frequency[1]);
 wed4.position.set(40,0,20);
 let thu0 = new THREE.Mesh(outerBoxGeo,frequency[1]);
 thu0.position.set(-40,0,0);
@@ -247,18 +247,18 @@ function init(){
     document.body.appendChild(renderer.domElement);
 
     //orbit control library must be imported separately
-    // controls= new THREE.OrbitControls(camera,renderer.domElement);
-    // controls.enableDamping=true;
-    // controls.dampingFactor=1;
-    // controls.enableZoom =false;
-    // controls.enableKeys =false;
-    // controls.maxPolarAngle= Math.PI/4;
-    // controls.panSpeed=0.2;
-    // controls.rotateSpeed=0.2;
+    controls= new THREE.OrbitControls(camera,renderer.domElement);
+    controls.enableDamping=true;
+    controls.dampingFactor=1;
+    controls.enableZoom =false;
+    controls.enableKeys =false;
+    controls.maxPolarAngle= Math.PI/4;
+    controls.panSpeed=0.2;
+    controls.rotateSpeed=0.2;
     camera.position.set(0,150,0);
     camera.rotation.x=-Math.PI/2;
-    // controls.target.set(0,0,0);
-    // controls.update();
+    controls.target.set(0,0,0);
+    controls.update();
     
     //add in the scene
     scene.add(platform,mon0,mon1,mon2,mon3,mon4,tue0,tue1,tue2,tue3,tue4,wed0,wed1,wed2,wed3,wed4,thu0,thu1,thu2,thu3,thu4,fri0,fri1,fri2,fri3,fri4,sat0,sat1,sat2,sat3,sat4,sun0,sun1,sun2,sun3,sun4);

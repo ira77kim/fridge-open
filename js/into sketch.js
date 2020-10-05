@@ -6,7 +6,7 @@ let light1,light2;
 //material related
 //let boxcolor=[0xF9643B, 0xFC7847, 0xFE8B53, 0xFEAB6D, 0xFECA87, 0xFFE4C3, 0xFFFFFF, 0xBED1FD, 0x7DA2FA, 0x5D77DF, 0x3C4CC4, 0x2A359F];
 // let boxcolor=[0xF9643B, 0xE76D4C, 0xD4765E, 0xC27F6F, 0xB0BBB0, 0x9D9192, 0x8B9AA3, 0x78A3B5, 0x66ACC6 ,0x54B5D7, 0x41BEE9, 0x2FC7FA];
-let boxcolor=[0xEA5400, 0xDA5615, 0xC9582B, 0xB95A40, 0xA95B55, 0x995D6A, 0x895F7F, 0x786195, 0x6863AA, 0x5864BF,0x4866D4, 0x3768EA, 0x276AEFF];
+let boxcolor=[0xEA5400, 0xDA5615, 0xC9582B, 0xB95A40, 0xA95B55, 0x995D6A, 0x895F7F, 0x786195, 0x6863AA, 0x5864BF,0x4866D4, 0x3768EA, 0x276AFF];
 
 let axiscolor=0xFFFFFF;
 let bg=0xCECECE;
@@ -252,16 +252,20 @@ function init(){
     controls= new THREE.OrbitControls(camera,renderer.domElement);
     controls.enableDamping=true;
     controls.dampingFactor=1;
-    controls.enableZoom =false;
+    controls.enableZoom =true;
     controls.enableKeys =true;
     controls.maxPolarAngle= Math.PI/2;
     controls.minPolarAngle= -Math.PI/2;
+    controls.zoomSpeed=0.2;
     controls.panSpeed=0.2;
     controls.rotateSpeed=0.2;
-    camera.position.set(0,1,110);
+    camera.position.set(0,25,110);
     // camera.rotation.x=-Math.PI/2;
-    controls.target.set(0,0,0);
-    
+    controls.target.set(0,0,-69);
+    // controls.target.x=camera.position.x;
+    // controls.target.y=camera.position.y;
+    // controls.target.z=camera.position.z+2;
+
     controls.update();
     
     //add in the scene
@@ -276,7 +280,7 @@ function init(){
     generateItemnum();
         let mesh = new THREE.Mesh( new THREE.Geometry(),white);
         mesh.position.z=75;
-        mesh.position.y=-11;
+        mesh.position.y=0;
         // mesh.rotation.x=-Math.PI/2;
         scene.add( mesh );
         
@@ -304,8 +308,8 @@ function init(){
     xaxis();
     let itemaxis = new THREE.Mesh( new THREE.Geometry(),white);
     itemaxis.position.z=75;
-    itemaxis.position.y=-20;
-    itemaxis.position.x=-20;
+    itemaxis.position.y=8;
+    itemaxis.position.x=-15;
     // itemaxis.rotation.x=-Math.PI/2;
     scene.add( itemaxis );
         
@@ -333,7 +337,7 @@ function init(){
         let day = new THREE.Mesh( new THREE.Geometry(),white);
         day.position.x=55;
         day.position.z=0;
-        day.position.y=-12;
+        day.position.y=0;
         day.rotation.x=-Math.PI/2;
         day.rotation.y=Math.PI/2;
         day.rotation.z=Math.PI/2;
@@ -416,8 +420,9 @@ let day;
 let itemCount;
 let openCount;
 document.addEventListener('keyup', check);
+document.addEventListener('scroll',check);
 function check(){
-    
+    console.log("scroll");
     if(camera.position.x>=-49&&camera.position.x<=49&&camera.position.z>=-69&&camera.position.z<=69){
         console.log("in zone");
         // value.innerHTML= "hi";
@@ -615,7 +620,7 @@ function check(){
     }
     else{
         console.log("not in zone");
-        value.innerHTML= "You are not in the data zone.<br> Use the arrow keys to navigate around the data.";
+        value.innerHTML= "Enter fridge-open data.<br> Use 🡄 🡆 🡅 🡇 keys to navigate through the data.";
     }
 }
 
