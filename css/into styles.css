@@ -16,24 +16,26 @@ body{
   /* font-family: 'Abril Fatface', cursive; */
   /* font-family: 'Audiowide', cursive;  */
   margin-left: 1.5vw;
-  font-size: 6vw;
+  font-size: 3vw;
   color: #276aff;
-  line-height: 13vh;
+  line-height: 5vh;
   
 }
 #sub{
-  margin-left:3.5vw;
-  font-size: 1.2vw;
+  margin-left:2vw;
+  font-size: 1vw;
   font-family: 'Montserrat Alternates', sans-serif;
 }
 #intro{
-  margin-left:3.5vw;
+  margin-left:2vw;
+  width:28vw;
 }
 
 #inner{
   position: absolute;
   margin-left:63.5vw;
-  margin-top: 40vh;
+  /* margin-top: 40vh; */
+  margin-top: 10vh;
 }
 #legend{
   /* position: relative; */
@@ -44,7 +46,7 @@ body{
 
 #options{
   /* position:absolute; */
-  margin-left:3.5vw;
+  margin-left:2vw;
   margin-top:6vh; 
 }
 #camTop{
@@ -84,8 +86,22 @@ body{
 #firstP:hover{
   opacity:0.9;
 }
-
-
+#mapping{
+  position:absolute;
+  top:55vh;
+  left:50vw;
+  text-align: left;
+  text-shadow: 2px 2px #585454;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size:1.5vw;
+  color: white;
+  border-radius: 12px;
+}
 #top{
   position:absolute;
+}
+#div{
+  position:absolute;
+  margin-left:30vw;
 }

@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:wght@800;900&family=Montserrat+Alternates:wght@200;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/into styles.css">
 
 </head>
 <body>
@@ -18,17 +18,16 @@
             <br>( in 7 days )
         </h3>
         
-        <p id="intro">This is a visualization of how many times the refrigerator door was opened
-            and how many items entered or exited the refrigerator. The data was collected for 7 days 
-            period and visualized to learn more about the inefficiency caused by my habit of checking 
-            inside the refrigerator. </p>    
+        <p id="intro">In this experience of moving through each data point from 1st person perspective, 
+            audience can change their usual 3rd person holistic perspective in understanding the data, and feel the information instead 
+            of analyzing it from afar.</p>    
     
     <div id="options">
         <button type="button" id="camTop" onclick="location.href='index.html'">Overall view</button>
-        <span id="des">Holistic view on 7 day long data collection</span>
+        <!-- <span id="des">Holistic view on 7 day long data collection</span> -->
         <br><br>
         <button type="button" id="firstP" onclick="location.href='into.html'">Into the data</button>
-        <span id="des">Observe data in 1st person point of view</span>
+        <!-- <span id="des">Observe data in 1st person point of view</span> -->
     </div>
 </div>
 
@@ -36,11 +35,14 @@
         <p id="legend">number of times the fridge was open</p>
         <img id="legend" src="js/Untitled-1.png">
     </div>
-    
-   
+    <div id="mapping" class="block">
+    <span>You are not in the data zone.<br>
+    Use the arrow keys to navigate around the data.</span>
+    </div>
+    <div id="div"></div>
     <canvas id="top"></canvas>
     <script src="js/three.js"></script>
     <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/2666677/OrbitControls.js'></script>
-    <script src="js/sketch.js"></script> 
+    <script src="js/into sketch.js"></script> 
 </body>
 </html>
